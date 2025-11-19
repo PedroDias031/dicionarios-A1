@@ -1,66 +1,49 @@
 # dicionarios-A1
 
-🗺️ Explorando Dicionários em Python
+🗺️ Consulta Simples de UF (Unidade Federativa)
 
-- Este projeto simples demonstra o uso e a iteração sobre dicionários em Python, uma estrutura de dados fundamental para armazenar pares de chave-valor (key-value pairs). O exemplo foca em como acessar e exibir separadamente as chaves (abreviações de estados) e os valores (nomes dos estados).
+- Este é um script Python básico que permite ao usuário consultar o nome completo de um estado brasileiro (ou cidade principal) a partir de sua sigla (UF). O programa garante que apenas siglas válidas sejam aceitas antes de exibir o resultado.
 
-⚙️ Como Funciona
+✨ Funcionalidades
 
-- O código é dividido em três partes principais: a criação do dicionário e duas iterações diferentes sobre seus elementos.
+- Mapeamento UF: Contém um dicionário predefinido que mapeia 10 siglas de Unidades Federativas (UF) aos seus respectivos nomes (ex: SP para São Paulo).
 
-1. Criação do Dicionário (cidades)
-- O dicionário cidades mapeia as abreviações dos estados brasileiros (chaves) para os nomes completos dos estados (valores).
+- Validação de Entrada: Utiliza um laço while para solicitar repetidamente a UF ao usuário até que uma sigla válida (presente no dicionário) seja inserida.
 
-2. Iteração pelos Valores (.values())
-- Esta seção utiliza o método .values() para retornar uma "visão" dos valores do dicionário.
+- Output Formatado: Exibe o nome do estado/cidade escolhido em letras maiúsculas para clareza.
 
-3. Iteração pelas Chaves (.keys())
-- Esta seção utiliza o método .keys() para retornar uma "visão" das chaves do dicionário.
-- O laço for itera sobre todas as chaves do dicionário.
+🛠️ Como Executar
 
-Saída: Exibe apenas as abreviações dos estados, como "AC", "BA", "CE", etc.
+- Este é um script Python puro.
 
-💻 Execução
+REQUISITOS:
 
-Pré-requisitos:
-- Python 3 instalado.
+- Python: Versão 3.x
+  
+EXECUÇÃO:
 
-Execução:
-- Salve o código em um arquivo chamado, por exemplo, dicionario_estados.py.
+- Salve o código em um arquivo chamado, por exemplo, consulta_uf.py.
 
-Execute o script no terminal:
+- Abra o IDE ou prompt de comando, navegue até o diretório onde o arquivo está salvo.
 
-Bash
+➡️ Exemplo de Entrada/Saída (I/O)
 
-python dicionario_estados.py
-Resultado Esperado:
-Aqui printa os valores das chaves!
-Acre
-Bahia
-Ceara
-Distrito Federal
-Minas Gerais
-Paraná
-Rio de Janeiro
-Rio Grande do Sul
-São Paulo
-Pernambuco
-Aqui printa os chaves do dicionario!
-AC
-BA
-CE
-DF
-MG
-PR
-RJ
-RS
-SP
-PE
+- O exemplo demonstra como o script lida com entradas inválidas e exibe o resultado para uma entrada válida.
 
-💡 Conceito Chave: Dicionário
+💡 Estrutura do Código
 
-- Um dicionário é uma coleção não ordenada (no Python moderno, é inserção ordenada) de itens. Cada item consiste em uma chave e um valor.
+- O script é dividido em três partes principais:
 
-- Chave (Key): Deve ser única e imutável (como strings, números ou tuplas). Serve como o índice para encontrar o valor.
+- Dicionário de Dados (cidades): Define o conjunto de dados (Chave: Sigla, Valor: Nome Completo).
 
-- Valor (Value): Pode ser qualquer tipo de dado (string, número, lista, outro dicionário, etc.).
+- Lista de Chaves (uf): Cria uma lista das chaves (cidades.keys()) para facilitar a validação da entrada.
+
+- Laço de Validação (while True):
+
+- Solicita a UF e converte a entrada para maiúsculas (.upper()).
+
+- Verifica se a UF digitada está presente na lista uf (validação).
+
+- Se válida, o laço é interrompido (break). Se inválida, exibe uma mensagem de erro e repete a solicitação.
+
+- Impressão do Resultado: Após a validação, usa a UF validada como chave para buscar e imprimir o valor correspondente no dicionário: cidades[city].
