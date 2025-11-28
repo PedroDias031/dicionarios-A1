@@ -12,6 +12,50 @@
 
 - Output Formatado: Exibe o nome do estado/cidade escolhido em letras maiúsculas para clareza.
 
+📝 Estrutura do Algoritmo
+Abaixo está o pseudocódigo que representa a lógica do script. O pseudocódigo é uma ferramenta fundamental na representação de algoritmos, pois permite descrever o fluxo lógico antes da codificação em uma linguagem específica.
+
+ALGORITMO Mapeamento UF
+
+VARIAVEIS
+
+    cidades : DICIONÁRIO // Mapeia UF (chave) para Nome do Estado (valor)
+    
+    uf : LISTA          // Contém apenas as chaves (UFs) do dicionário cidades
+    
+    city : STRING       // Armazena a UF digitada pelo usuário
+INÍCIO
+
+    // 1. Definição da Estrutura de Dados
+    cidades = {
+        "AC": "Acre",
+        "BA": "Bahia",
+        ...
+        "PE": "Pernambuco"
+    }
+    uf = extrair_chaves_do_dicionario(cidades)
+    
+    // 2. Estrutura de Repetição (Loop) para Validação de Entrada
+    REPITA
+        // 2.1. Solicitar Entrada ao Usuário
+        IMPRIMA "Informe uma dessas UF para continuar: AC, BA, CE, DF, MG, PR, RJ, RS, SP, PE."
+        LEIA city
+        city = converter_para_maiusculas(city)
+        
+        // 2.2. Estrutura Condicional para Checagem
+        SE city PERTENCE_A uf ENTÃO
+            PARE O LAÇO DE REPETIÇÃO
+        SENÃO
+            IMPRIMA "Não foi possível consultar essa UF, tente novamente..."
+        FIM_SE
+    ENQUANTO VERDADEIRO
+    
+    // 3. Apresentação do Resultado
+    nome_da_cidade = valor_do_dicionario(cidades, city)
+    nome_da_cidade = converter_para_maiusculas(nome_da_cidade)
+    IMPRIMA "A cidade da UF escolhida é: " + nome_da_cidade
+FIM
+
 🛠️ Como Executar
 
 - Este é um script Python puro.
